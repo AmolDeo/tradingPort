@@ -1,0 +1,78 @@
+﻿@using System.Web.Optimization
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ClientPort</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    @Scripts.Render("~/bundles/jqueryglobal")
+    @Html.DevExpress().GetStyleSheets(
+                    new StyleSheet { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+                    new StyleSheet { ExtensionSuite = ExtensionSuite.Editors },
+                    new StyleSheet { ExtensionSuite = ExtensionSuite.HtmlEditor },
+                    new StyleSheet { ExtensionSuite = ExtensionSuite.Report }
+                )
+    @Html.DevExpress().GetScripts(
+                    new Script { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+                    new Script { ExtensionSuite = ExtensionSuite.Editors },
+                    new Script { ExtensionSuite = ExtensionSuite.HtmlEditor },
+                    new Script { ExtensionSuite = ExtensionSuite.Report }
+                )
+    @Scripts.Render("~/bundles/clientportalbasic")
+    @Scripts.Render("~/bundles/devextreme-all")
+    @Scripts.Render("~/bundles/devextremeaspnet")
+    @Styles.Render("~/bundles/maincss")
+
+    <style>
+        .content-wrapper {
+            padding-top: 10px !important;
+            padding-bottom: 10px !important;
+            margin-left: 10px;
+            margin-right: 10px;
+            /*padding-left: 100px !important;
+            padding-right: 100px !important;*/
+        }
+    </style>
+</head>
+
+
+<body class="hold-transition skin-blue sidebar-mini sidebar-collapse">
+    <!-- Site wrapper -->
+    <div class="wrapper">
+        <div id="loadingPanelContainer"></div>
+        <div id="popupMessageContainer"></div>
+        @Html.Partial("_topNavbar")
+        <!-- =============================================== -->
+        @Html.Partial("_leftNavbar")
+        <!-- =============================================== -->
+        @RenderBody()
+        <!-- =============================================== -->
+        @Html.Partial("_footer")
+        @if (ViewBag.HideNavbar != false)
+        {<!-- Control Sidebar -->
+            @Html.Partial("_rightSideBar")
+        }
+        <!-- /.control-sidebar -->
+        <!-- Add the sidebar's background. This div must be placed
+             immediately after the control sidebar -->
+        <div class="control-sidebar-bg"></div>
+    </div>
+    <!-- ./wrapper -->
+
+    @Scripts.Render("~/bundles/analyticsbootstrapjs")
+
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>$.widget.bridge('uibutton', $.ui.button);</script>
+
+    <!-- Morris.js charts -->
+    @Scripts.Render("~/bundles/raphaeljs")
+
+    @Scripts.Render("~/bundles/thirdpartyjs")
+    @Scripts.Render("~/bundles/appjs")
+    <div id="commonPopupContiner"></div>   
+</body>
+</html>

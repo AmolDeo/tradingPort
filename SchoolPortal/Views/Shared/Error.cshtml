@@ -1,0 +1,36 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+<div class="content-wrapper">
+
+    @{
+        string ErrorMessage = string.Empty;
+        string ErrorTitle = string.Empty;
+        ViewBag.Title = "Error";
+        try
+        {
+            ErrorTitle = ((atWebCommon.Exceptions.ModelValidationException)((System.Web.Mvc.HandleErrorInfo)ViewData.Model).Exception).opResult.ErrorTitle.ToString();
+            ErrorMessage = ((atWebCommon.Exceptions.ModelValidationException)((System.Web.Mvc.HandleErrorInfo)ViewData.Model).Exception).opResult.ErrorMessage.ToString();
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = "";
+        }
+    }
+    @if (ErrorMessage != "")
+    {
+        {
+            Layout = null;
+        }
+
+        Html.ViewContext.Writer.Write("<h1 class=\"text-danger\">" + ErrorTitle + "</h1>");
+        Html.ViewContext.Writer.Write("<h2 class=\"text-danger\">" + ErrorMessage + "</h2>");
+    }
+    else
+    {
+        <h1 class="text-danger">Error.</h1>
+        <h2 class="text-danger">An error occurred while processing your request.</h2>
+    }
+
+</div>
+
+

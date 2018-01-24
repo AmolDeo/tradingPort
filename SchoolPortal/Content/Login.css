@@ -1,0 +1,123 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;    
+}
+
+
+.wrapper {   
+    position: absolute;
+    padding-top: 10px;
+    top: 200px;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    margin-top: -200px;
+    overflow: hidden;    
+    background-size: 100% 100%;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 1.42857143;
+}
+
+    .wrapper.form-success .container h1 {
+        -webkit-transform: translateY(85px);
+        transform: translateY(85px);
+    }
+
+.container {
+    /*max-width: 600px;*/
+    vertical-align: central;
+    text-align: center;
+    padding-left: 0px !important;
+    /*height:66%!important;
+    margin-top:13%;
+    margin-right:4%;
+    margin-bottom:17%;
+    float:right;*/
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 1.42857143;
+}
+
+ul.unstyle {
+    list-style: none;    
+    display: inline-flex;    
+    float:right;            
+    line-height: 1.42857143;
+}
+
+ul.unstyle > li > a {
+    color: white;
+    margin-right: 25px;    
+}
+
+ul.unstyle > li {
+	/*font-family: 'oswaldlight';*/
+	font-size: 17px;
+}
+
+a:hover, a:focus {	
+	text-decoration: none;
+}
+
+    .container h1 {
+        font-size: 40px;
+        -webkit-transition-duration: 1s;
+        transition-duration: 1s;
+        -webkit-transition-timing-function: ease-in-put;
+        transition-timing-function: ease-in-put;
+        font-weight: 200;
+    }
+
+form {  
+    position: static;
+    z-index: 2;
+}
+
+    form .dx-texteditor-input {        
+        background-color: rgba(255, 255, 255, 0.4);                        
+        font-size: 14px;        
+        -webkit-transition-duration: 0.25s;
+        transition-duration: 0.25s;
+        font-size: larger;
+        font-weight: 500;
+        height:42px;
+    }
+
+        #emailTextBox {
+            background: padding-box url('Images/ContactUsBlack24.png') 10px no-repeat;
+            padding-left: 35px;
+            background-position: left center 2px;
+        }
+
+        #passwordTextBox {
+            background: padding-box url('Images/passwordblack24.png') 10px no-repeat;
+            padding-left: 35px;           
+            background-position: left center 2px;
+        }      
+
+form .dx-button-success {    
+    font-size: large; 
+    box-sizing: content-box;    
+}
+
+@media (max-width: 768px) {
+  .login-box,
+  .register-box {
+  width: 360px;
+  margin: 7% auto;
+}
+}
+
+@media (max-width: 400px) {
+  .login-box,
+  .register-box {
+    width: 90%;
+    margin-top: 20px;
+  }
+}
+
+.dx-checkbox {
+    padding-left:2px !important;
+}

@@ -1,0 +1,140 @@
+[
+  {
+    "outputFileName": "Assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js",
+    "inputFiles": [
+      "Assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.js"
+    ]
+  },
+  {
+    "outputFileName": "Assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css",
+    "inputFiles": [
+      "Assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/plugins/fastclick/fastclick.min.js",
+    "inputFiles": [
+      "Assets/plugins/fastclick/fastclick.js"
+    ]
+  },
+  {
+    "outputFileName": "Assets/plugins/iCheck/icheck.min.js",
+    "inputFiles": [
+      "Assets/plugins/iCheck/icheck.js"
+    ]
+  },
+  {
+    "outputFileName": "Assets/plugins/morris/morris.min.js",
+    "inputFiles": [
+      "Assets/plugins/morris/morris.js"
+    ]
+  },
+  {
+    "outputFileName": "Assets/plugins/slimScroll/jquery.slimscroll.min.js",
+    "inputFiles": [
+      "Assets/plugins/slimScroll/jquery.slimscroll.js"
+    ]
+  },
+  {
+    "outputFileName": "Assets/plugins/sparkline/jquery.sparkline.min.js",
+    "inputFiles": [
+      "Assets/plugins/sparkline/jquery.sparkline.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/cldr/event.min.js",
+    "inputFiles": [
+      "Scripts/cldr/event.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/cldr/supplemental.min.js",
+    "inputFiles": [
+      "Scripts/cldr/supplemental.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/cldr/unresolved.min.js",
+    "inputFiles": [
+      "Scripts/cldr/unresolved.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/globalize/currency.min.js",
+    "inputFiles": [
+      "Scripts/globalize/currency.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/globalize/date.min.js",
+    "inputFiles": [
+      "Scripts/globalize/date.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/globalize/message.min.js",
+    "inputFiles": [
+      "Scripts/globalize/message.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/globalize/number.min.js",
+    "inputFiles": [
+      "Scripts/globalize/number.js"
+    ]
+  },
+  {
+    "outputFileName": "Views/Shared/CSS/CommonStyles.min.css",
+    "inputFiles": [
+      "Views/Shared/CSS/CommonStyles.css"
+    ]
+  },
+  {
+    "outputFileName": "Views/Shared/CSS/FrameworkStyles.min.css",
+    "inputFiles": [
+      "Views/Shared/CSS/FrameworkStyles.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/js/app.min.js",
+    "inputFiles": [
+      "Assets/js/app.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/ATWebViews/ATAddressMultiView.min.js",
+    "inputFiles": [
+      "Scripts/ATWebViews/ATAddressMultiView.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/ATWebViews/ATAddressView.min.js",
+    "inputFiles": [
+      "Scripts/ATWebViews/ATAddressView.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/ATWebViews/PopupMessage.min.js",
+    "inputFiles": [
+      "Scripts/ATWebViews/PopupMessage.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/ATWebViews/HelperMethods.min.js",
+    "inputFiles": [
+      "Scripts/ATWebViews/HelperMethods.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/ATWebViews/ATUploadControl.min.js",
+    "inputFiles": [
+      "Scripts/ATWebViews/ATUploadControl.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/ATWebViews/ATIndexView.min.js",
+    "inputFiles": [
+      "Scripts/ATWebViews/ATIndexView.js"
+    ]
+  }
+]

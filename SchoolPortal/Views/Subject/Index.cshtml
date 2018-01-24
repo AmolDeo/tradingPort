@@ -1,0 +1,10 @@
+﻿@using DevExtreme.AspNet.Mvc;
+
+<div class="content-wrapper">
+    @Html.DevExtreme().DataGrid().ID("classGirdControl").ColumnAutoWidth(true).ColumnResizingMode(ColumnResizingMode.NextColumn).Editing(c => c.AllowAdding(true).AllowDeleting(true).AllowUpdating(true).Mode(GridEditMode.Batch)).Grouping(x => x.AllowCollapsing(true).AutoExpandAll(true).ContextMenuEnabled(true).ExpandMode(GridGroupingExpandMode.RowClick)).GroupPanel(x => x.AllowColumnDragging(true).EmptyPanelText("Class")).Height("100%").Paging(x => x.Enabled(true)).Columns(col =>
+    {
+        col.Add().DataField("Id").Visible(false).ShowInColumnChooser(false).AllowEditing(false).FormItem(x => x.Visible(false));
+        col.Add().DataField("Name").DataType(GridColumnDataType.String).ValidationRules(x => x.AddRequired().Message("Subject name is required!"));
+        col.Add().DataField("ClassId").Caption("Class").Lookup(lk => lk.DataSource(ds => ds.WebApi().Controller("APIClass").Key("Id")).DisplayExpr("Name").ValueExpr("Id"));
+    }).DataSource(x=>x.WebApi().Controller("APISubject").LoadAction("Get").Key("Id"))
+</div>

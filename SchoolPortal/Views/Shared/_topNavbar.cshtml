@@ -1,0 +1,120 @@
+﻿
+<header class="main-header">
+
+    <!-- Logo -->
+    @Html.AntiForgeryToken()
+    
+    <nav class="navbar navbar-static-top">
+        <div id="topNavbarLogoAnchorDiv" class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-left" style="padding-left:20px;">
+            <p style="color:white; font-size:26px; padding-top:5px;"><a href="#" style="color:white;">SCPort</a></p>
+        </div>
+        <!-- Sidebar toggle button-->            
+            <div id="topNavbarMainMenuDiv" class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="max-height:52px !important;">
+                <div class="navbar-custom-menu">
+                    <ul id="topNavbarHamIconUL" class="nav navbar-nav pull-left">
+                        <li>
+                            <a id="topnavbarHamburger" href="#" class="sidebar-toggle hidden-lg hidden-md hidden-sm" data-toggle="offcanvas" role="button" onclick="onHamBClick()">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav pull-right">
+                        @{
+                            <li class="dropdown user user-menu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <i class="fa fa-institution" style="padding-top:3px; padding-right:-5px;"></i>
+                                    </a>
+                                   
+                                        <ul class="dropdown-menu" style="top:51px !important;">
+                                            <!-- User image -->
+                                            <li class="user-header" style="height:80px !important;">
+                                            </li>
+                                            <!-- Menu Body -->
+                                            <li class="user-body" style="color:gray;">
+                                                @{
+
+                                                    <table class="table">
+                                                        <tr style="border:none !important;">
+                                                            <td style="border:none !important;"><i class="fa fa-phone"></i></td>
+                                                            <td style="border:none !important;">Phone</td>
+                                                        </tr>
+                                                        <tr style="border:none !important;">
+                                                            <td style="border:none !important;"><i class="fa fa-envelope-o"></i></td>
+                                                            <td style="border:none !important;">Email</td>
+                                                        </tr>
+                                                        <tr style="border:none !important;">
+                                                            <td style="border:none !important;"><i class="fa fa-map-signs"></i></td>
+                                                            <td style="border:none !important;">Address</td>
+                                                        </tr>
+                                                        <tr style="border:none !important;">
+                                                            <td style="border:none !important;"><i class="fa fa-globe"></i></td>
+                                                            <td style="border:none !important;">Website</td>
+                                                        </tr>
+                                                    </table>
+                                                }
+                                            </li>                                          
+                                        </ul>                                                    
+                                </li>
+                        }
+                        
+                        <!-- Notifications: style can be found in dropdown.less -->                                      
+                        <li id="dashNotificationMainLi" class="dropdown notifications-menu">                            
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-bell-o"></i>
+                                <span id="dashNCountSpn" class="label label-warning">5</span>
+                            </a>
+                            <ul class="dropdown-menu" style="top:51px !important;">
+                                <li class="header">You have 5 notifications</li>
+                                <li>
+                                    <!-- inner menu: contains the actual data -->
+                                    <ul class="menu">
+                                        Test
+                                    </ul>
+                                </li>
+                                <li class="footer"><a href="/Documents/GetDetailNotifications">View all</a></li>
+                            </ul>                            
+                        </li>
+
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">                             
+                                <span id="spnUserName" class="hidden-xs hidden-md hidden-sm">Amol D</span>
+                            </a>
+                            <ul class="dropdown-menu" style="top:51px !important;">
+                                <!-- User image -->
+                                <li class="user-header" style="height:80px !important;">                                    
+                                    <p>                                        
+                                        <small>Inception Date:10/12/2015 </small>
+                                    </p>
+                                </li>
+                                <!-- Menu Body -->
+                                <li class="user-body">
+                                    <div class="row">                                     
+                                        <div class="col-xs-5 text-center">                                     
+                                        </div>
+                                        <div class="col-xs-7 text-center">
+                                            <a class="btn btn-default btn-flat">Change Password</a>
+                                        </div>
+                                    </div>
+                                    <!-- /.row -->
+                                </li>
+                                <!-- Menu Footer-->
+                                <li class="user-footer">                                  
+                                    <div class="pull-right">
+                                        <a class="btn btn-default btn-flat" >Log out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                                               
+                        <!-- Control Sidebar Toggle Button -->
+                        <li>
+                            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>                                    
+    </nav>
+</header>

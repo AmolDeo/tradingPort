@@ -1,0 +1,204 @@
+﻿.box-shadow--1dp {
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+.box-shadow--2dp {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+.box-shadow--3dp {
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .14), 0 3px 3px -2px rgba(0, 0, 0, .2), 0 1px 8px 0 rgba(0, 0, 0, .12);
+}
+
+.box-shadow--4dp {
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .2);
+}
+
+.box-shadow--6dp {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12), 0 3px 5px -1px rgba(0, 0, 0, .2);
+}
+
+.box-shadow--8dp {
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .2);
+}
+
+.box-shadow--16dp {
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, .14), 0 6px 30px 5px rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(0, 0, 0, .2);
+}
+
+.box-shadow--16dp {
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, .14), 0 6px 30px 5px rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(0, 0, 0, .2);
+}
+
+.BorderBox--8dp {
+    border: 8px solid  #F1F1F1;
+}
+
+.btnBold.active {
+     background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0.0);
+    box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0.0);
+    color: #4CAF50 !important;
+    font-weight: bold;
+}
+
+.NoBorder {
+     background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0.0) !important;
+    box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0.0) !important;
+}
+/*--------------------------------------Changes for the Button Link-------------------------*/
+.btnBold .textBold{
+    color: #4CAF50 !important;
+    font-weight: bold;
+}
+.active, .dot:hover {
+    background-color:transparent !important;
+}
+/*--------------------------------------Changes for the Label control-------------------------*/
+.label {
+ 
+    font-size: inherit !important;
+    font-weight: inherit !important;
+}
+
+/*--------------------------------------Changes for the Grid View ------------------------*/
+  .dx-datagrid-nowrap {
+    white-space: nowrap;
+    /*padding-right:0px !important;*/
+}
+
+    .dx-datagrid .dx-row > td {
+    padding: 3px !important;
+}
+ .dx-datagrid-scroll-container {
+    overflow:inherit !important;
+    width: 100%;
+}   
+.dx-header-row 
+{
+    background-color: darkgrey;
+}  
+
+.dx-datagrid-headers
+{
+    position: relative;
+    background-color: darkgrey;
+    outline: 0;
+    text-align:center ;
+    /*padding-right:0px !important;*/
+}
+   .dx-datagrid-text-content
+   {
+       text-align:center ;
+       /*font-weight:bold;*/
+       color:black;
+   }
+   .dx-datagrid .dx-column-lines > td {
+    border-left: 1px solid lightgray !important;
+    border-right: 1px solid lightgray !important;
+}
+   /* --------------Nav bar drop down text decoration ------------------------------*/
+   .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    color: white;
+    background-color: black;
+       font-weight: bold;
+}
+   /*---------------------Nav bar Drop down ----------------------------------*/
+  .dropdown-menu {
+    background-color: #000000 !important;
+}
+
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+    color: black;
+    text-decoration: none;
+    background-color: lightgray;
+    outline: 0;
+}
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    color: black !important;
+    text-decoration: none;
+    background-color: lightgray;
+}
+
+/*--------------------------------- Link button ------------------------------------------*/
+
+.btn-link:hover, .btn-link:focus {
+    color: #4CAF50;
+    text-decoration: underline;
+    background-color: transparent;
+}
+.btn-link, .btn-link:hover, .btn-link:focus, .btn-link:active {
+    border-color: transparent;
+}
+.btn:hover, .btn:focus {
+    color: #333333;
+    text-decoration: none;
+}
+.btn-link, .btn-link:active, .btn-link[disabled], fieldset[disabled] .btn-link {
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.btn-link {
+    font-weight: normal;
+    color: black;
+    cursor: pointer;
+    border-radius: 0;
+}
+
+/*-----------------For the grid view search box -------------------------------*/
+.dx-searchbox .dx-icon-search {
+    font: 14px/1 DXIcons;
+    position: absolute;
+    top: 50%;
+    margin-top: -17px;
+    width: 34px;
+    height:0px;
+    background-position: 8px 8px;
+    -webkit-background-size: 18px 18px;
+    -moz-background-size: 18px 18px;
+    background-size: 18px 18px;
+    padding: 8px;
+    font-size: 18px;
+    text-align: center;
+    line-height: 18px;
+    font-size: 17px;
+    color: #898989;
+}
+
+
+/*------------------------- For the Popup control -------------------------*/
+.dxpcLite .dxpc-header, .dxdpLite .dxpc-header {
+    color: #404040;
+    background-color: #DCDCDC;
+    border-bottom: 1px solid #C9C9C9;
+    padding: 2px 2px 2px 12px;
+    font-weight: bold;
+}
+
+.dxflGroupCell {
+    padding: 4px 8px;
+}
+
+.dxpcLite .dxpc-mainDiv, .dxpcLite.dxpc-mainDiv, .dxdpLite .dxpc-mainDiv, .dxdpLite.dxpc-mainDiv {
+    top: 0;
+    left: 0;
+    background-color: white;
+    border: 4px solid #8B8B8B;
+}
+
+dxpcLite, .dxdpLite {
+    width: 200px;
+    left: 0;
+    top: 0;
+    position: absolute;
+    border-spacing: 0;
+    font: 12px Tahoma, Geneva, sans-serif;
+    color: black;
+    -moz-box-shadow: 3px 3px 5px 6px #ccc;
+    -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+    box-shadow: 3px 3px 5px 6px #ccc;
+}

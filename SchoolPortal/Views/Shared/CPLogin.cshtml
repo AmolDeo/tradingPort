@@ -1,0 +1,108 @@
+﻿@using SchoolPort.Models
+@using System.Web.Optimization
+@using DevExtreme.AspNet.Mvc
+@using DevExtreme.AspNet.Data
+
+@using System.Web.UI.WebControls
+
+@{
+    Layout = "";
+}
+
+@model LoginViewModel
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link href="~/Assets/css/AdminLTE.min.css" rel="stylesheet" />
+    <!-- iCheck -->
+    <link href="~/Assets/plugins/iCheck/square/blue.css" rel="stylesheet" />
+    @Html.DevExpress().GetStyleSheets(
+                new StyleSheet { ExtensionSuite = ExtensionSuite.Report }
+            )
+    @Html.DevExpress().GetScripts(
+                new Script { ExtensionSuite = ExtensionSuite.Report }
+            )
+
+    @Scripts.Render("~/bundles/devextremeaspnet")
+    @Scripts.Render("~/Scripts/ATWebViews/HelperMethods.js")
+    @Scripts.Render("~/Scripts/ATWebViews/PopupMessage.js")
+    @Scripts.Render("~/Scripts/UserManager/Tenants.js")
+    <!-- Bootstrap 3.3.6 -->
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+        .dx-checkbox-text {
+            vertical-align: text-top !important;
+        }
+    </style>
+
+</head>
+<body class="hold-transition login-page" style="overflow-y:hidden !important">
+    @using System.Web.UI.WebControls
+    <div id="popupMessageContainer"></div>
+    <div id="loadingPanelContainer"></div>
+    <div class="login-box">    
+        <!-- /.login-logo -->
+        <div class="login-box-body" style="max-height:310px !important;">
+            <p class="login-box-msg" style="padding-bottom:20px;">Sign in to start your session</p>
+            <div class="dx-toolbar-center" style="width: 90% ">
+                <center>
+                    @using (Ajax.BeginForm("ValidateUser", "Account", new { ReturnUrl = ViewBag.ReturnUrl },
+                    new AjaxOptions
+                    {
+                        HttpMethod = "POST",
+                        OnSuccess = "OnLoginSuccess",
+                        OnFailure = "OnLoginFailure",
+                        LoadingElementId = "logbtn",
+                        OnBegin = "onLoginBegin",
+                        LoadingElementDuration = 10000
+                    },
+                    new { id = "loginPageForm" }))
+                    {
+                        using (Html.DevExtreme().ValidationGroup())
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.DevExtreme().Form().ColCount(15).ID("flLogin").Width("95%").Items(items =>
+                               {
+                                          items.AddSimple().ColSpan(15).DataField("Email").Label(x => x.Visible(false)).Editor(x => x.TextBox().Name("Email").ID("emailTextBox").Placeholder("Email").Mode(DevExtreme.AspNet.Mvc.TextBoxMode.Email)).IsRequired(true);
+                                          items.AddSimple().ColSpan(15).Name("Password").DataField("Password").Label(x => x.Visible(false)).Editor(x => x.TextBox().ID("passwordTextBox").Placeholder("Password").Mode(DevExtreme.AspNet.Mvc.TextBoxMode.Password)).IsRequired(true);
+                                          items.AddSimple().ColSpan(15).Template(Html.DevExtreme().Button().ID("btnLogon").Width("100%").Text("LOGIN").Type(DevExtreme.AspNet.Mvc.ButtonType.Success).UseSubmitBehavior(true).ToString());
+                                          items.AddSimple().ColSpan(15).Template(@<text>
+                                                <div style="overflow:hidden; padding:0">
+                                                <div style="display: inline-block; text-align:center; vertical-align:central;">@Html.CheckBoxFor(x => x.RememberMe) Keep me signed in. &nbsp;</div><div style="display: inline-block; ">@Html.ActionLink("Forgot password?", "ForgotPassword", "Account")</div>
+                                            </div>
+                                        </text>);
+                                            }).FormData(Model)
+                                }
+                    }
+
+                </center>
+
+            </div>
+
+        </div>
+        <!-- /.login-box-body -->
+    </div>
+    <!-- /.login-box -->
+    <!-- iCheck -->
+    <script src="~/Assets/plugins/iCheck/icheck.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+﻿@using billPortPersist.BillPortEntities;
+@using DevExtreme.AspNet.Mvc;
+@using billPortPersist;
+@using atUserManager.Helpers;
+@using atUserManager.Entity;
+@using atUserManager;
+
+@*@model List<Notifications>*@
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Notifications
+            <small style="color:black;">
+            </small>
+        </h1>
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="notificationMainDiv" style="background-color:white; padding-left:40px; padding-right:40px; padding-top: 20px; padding-bottom:10px;">
+                    @{
+                        ApplicationUser user = UserSessionData.DBContext.Users.Where(u => u.UserName == UserSessionData.CurrentUser).FirstOrDefault();
+                        List<Notifications> NL = BillPortDbContext.Current.NotificationList.Where(n => n.UserID == user.Id).ToList();
+                    }
+                    
+                    <div style="border-bottom:10px;">
+                        <button class="pull-right" onclick="onDeleteNotificationBtnClick()" style="color:black; background-color:lightblue; border-radius: 5px; border:none;">Delete</button>
+                    </div>    
+                                   
+                    <div style="padding-top:10px;">
+                        @(Html.DevExtreme().List()
+                    .ID("notificationList")
+                    .ShowSelectionControls(true)
+                    .SelectionMode(ListSelectionMode.All)
+                    .SelectAllMode(SelectAllMode.Page)
+                    .DataSource(NL)
+                    .PageLoadMode(ListPageLoadMode.NextButton)
+                    .ShowScrollbar(ShowScrollbarMode.OnScroll)
+                    .UseNativeScrolling(false)
+                    .ItemTemplate(@<text>
+                    @if (user != null && user.TenantUsers.Where(r => r.IdentityRole.Name == Constants.ADVISOR_ROLE_NAME).Count() > 0)
+                    {
+                        @Html.Hidden("hdnDocUrl", "/Documents/Index?DocType=1")
+                        <a onclick="onNotificationItemClick('<%= Id %>','<%= ReportPath %>')">
+                            <%= MainMessage %>
+                        </a>
+                    }
+                    else if (user != null && user.TenantUsers.Where(r => r.IdentityRole.Name == Constants.CLIENT_ROLE_NAME).Count() > 0)
+                    {
+                        @Html.Hidden("hdnDocUrl", "/Documents/GetClientDocumentView")
+                            <a onclick="onNotificationItemClick('<%= Id %>','<%= ReportPath %>')">
+                                <%= MainMessage %>
+                            </a>
+                            }
+                            </text>)
+                        )
+</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /.content -->
+</div>

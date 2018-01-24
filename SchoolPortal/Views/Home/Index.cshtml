@@ -1,0 +1,25 @@
+﻿@using DevExtreme.AspNet.Mvc;
+
+@{
+    ViewBag.Title = "Dashboard";
+}
+<div class="content-wrapper">
+    @(Html.DevExtreme().DataGrid().ID("PositionDataGrid").Height("550px").Width("100%").Columns(col =>
+{
+    col.Add().DataField("Id").Visible(false);
+    col.Add().DataField("FirstName").Caption("First Name").DataType(GridColumnDataType.String);
+    col.Add().DataField("LastName").Caption("Last Name").DataType(GridColumnDataType.String);
+    col.Add().DataField("AccountNum").Caption("Account").DataType(GridColumnDataType.String);
+    col.Add().DataField("Description").Caption("Description").DataType(GridColumnDataType.String);
+    col.Add().DataField("ValuationDate").DataType(GridColumnDataType.Date).Format(Format.ShortDate);
+    col.Add().DataField("Amount").DataType(GridColumnDataType.Number).Format(Format.Currency).Option("precision", "2");
+    col.Add().DataField("Quantity").DataType(GridColumnDataType.Number).Format(Format.FixedPoint).Option("precision", "2");
+    col.Add().DataField("Price").DataType(GridColumnDataType.Number).Format(Format.Currency).Option("precision", "2");
+    col.Add().DataField("Available").DataType(GridColumnDataType.Boolean);
+    col.Add().DataField("Fee").DataType(GridColumnDataType.Number).Option("precision", "2");
+}).DataSource(x => x.WebApi().Controller("APIAccounts").LoadAction("Get").Key("Id")).Grouping(x=>x.AutoExpandAll(false).AllowCollapsing(true)).GroupPanel(x=>x.AllowColumnDragging(true).Visible(true).EmptyPanelText("Accounts")).RemoteOperations(x=>x.Grouping(true).Paging(true).Filtering(true).Sorting(true)).FilterRow(x=>x.Visible(true)))
+</div>
+
+
+
+
